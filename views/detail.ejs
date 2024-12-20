@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Ürün Detayı</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">
+          <h1><span style="color: yellow;">sahibinden</span><span style="color: black;">clone</span>.com</h1>
+        </a>
+      </div>
+      <div class="search-bar">
+        <form action="/search" method="get">
+          <input type="text" name="q" placeholder="Kelime, ilan no veya mağaza adı ile ara" />
+          <button type="submit">Ara</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  <main class="detail-container">
+    <section class="product-image">
+      <h1><%= product.description %></h1>
+      <hr class="title-divider">
+      <img src="<%= product.image %>" alt="Ürün Görseli" class="product-image">
+    </section>
+
+    <section class="product-details">
+      <h2><%= product.price.toLocaleString('tr-TR') %> TL</h2>
+      <p><strong>Konum:</strong> <%= product.city %></p>
+      <hr>
+
+      <% if (product.category === 'Emlak' && product.subcategory === 'Konut') { %>
+        <p><strong>İlan No:</strong> <%= product.ad_no %></p>
+        <hr>
+        <p><strong>Emlak Tipi:</strong> <%= product.real_estate_type || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>m² (Net):</strong> <%= product.area || 'Belirtilmemiş' %> m²</p>
+        <hr>
+        <p><strong>Oda Sayısı:</strong> <%= product.room_count || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Bina Yaşı:</strong> <%= product.building_age || 'Belirtilmemiş' %> yıl</p>
+        <hr>
+        <p><strong>Bulunduğu Kat:</strong> <%= product.floor_location || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Kat Sayısı:</strong> <%= product.total_floors || 'Belirtilmemiş' %></p>
+      <% } else if (product.category === 'Emlak' && product.subcategory === 'İş Yeri') { %>
+        <p><strong>İlan No:</strong> <%= product.ad_no %></p>
+        <hr>
+        <p><strong>Emlak Tipi:</strong> <%= product.real_estate_type || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>m² (Net):</strong> <%= product.area || 'Belirtilmemiş' %> m²</p>
+        <hr>
+        <p><strong>Oda Sayısı:</strong> <%= product.room_count || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Bina Yaşı:</strong> <%= product.building_age || 'Belirtilmemiş' %> yıl</p>
+        <hr>
+        <p><strong>Bulunduğu Kat:</strong> <%= product.floor_location || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Kat Sayısı:</strong> <%= product.total_floors || 'Belirtilmemiş' %></p>
+      <% } else if (product.category === 'Emlak' && product.subcategory === 'Arsa') { %>
+        <p><strong>İlan No:</strong> <%= product.ad_no %></p>
+        <hr>
+        <p><strong>Emlak Tipi:</strong> <%= product.real_estate_type || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>m² (Net):</strong> <%= product.area || 'Belirtilmemiş' %> m²</p>
+        <hr>
+        <p><strong>İmar Durumu:</strong> <%= product.zoning_status || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Ada No:</strong> <%= product.plot_number || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Parsel No:</strong> <%= product.parcel_number || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Tapu Durumu:</strong> <%= product.deed_status || 'Belirtilmemiş' %></p>
+      <% } else if (product.category === 'Vasıta') { %>
+        <p><strong>İlan No:</strong> <%= product.ad_no %></p>
+        <hr>
+        <p><strong>Marka:</strong> <%= product.brand || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Model:</strong> <%= product.model || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Türü:</strong> <%= product.type || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Yıl:</strong> <%= product.year || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>KM:</strong> <%= product.km || 'Belirtilmemiş' %></p>
+        <hr>
+        <p><strong>Motor Hacmi:</strong> <%= product.engine_capacity || 'Belirtilmemiş' %></p>
+      <% } else { %>
+        <p>Bu kategori için detaylar mevcut değil.</p>
+      <% } %>
+    </section>
+  </main>
+</body>
+</html>

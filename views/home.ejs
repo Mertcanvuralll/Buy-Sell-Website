@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Ana Sayfa</title>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">
+          <h1><span style="color: yellow;">sahibinden</span><span style="color: black;">clone</span>.com</h1>
+        </a>
+      </div>
+  
+      <div class="search-bar">
+        <form action="/search" method="get">
+          <input type="text" name="q" placeholder="Kelime, ilan no veya mağaza adı ile ara" />
+          <button type="submit">Ara</button>
+        </form>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <aside class="categories">
+      <h2>Kategoriler</h2>
+      <ul>
+        <li>
+          <a href="/category/Emlak">Emlak</a> (<%= categoryCounts.Emlak || 0 %>)
+          <ul>
+            <li><a href="/subcategory/Konut">Konut</a> (<%= subcategoryCounts.Konut || 0 %>)</li>
+            <li><a href="/subcategory/İş Yeri">İş Yeri</a> (<%= subcategoryCounts["İş Yeri"] || 0 %>)</li>
+            <li><a href="/subcategory/Arsa">Arsa</a> (<%= subcategoryCounts.Arsa || 0 %>)</li>
+          </ul>
+        </li>
+        <li>
+          <a href="/category/Vasıta">Vasıta</a> (<%= categoryCounts.Vasıta || 0 %>)
+          <ul>
+            <li><a href="/subcategory/Otomobil">Otomobil</a> (<%= subcategoryCounts.Otomobil || 0 %>)</li>
+            <li><a href="/subcategory/Arazi, SUV & Pickup">Arazi, SUV & Pickup</a> (<%= subcategoryCounts["Arazi, SUV & Pickup"] || 0 %>)</li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    
+    <section class="product-showcase">
+      <h2>Anasayfa Vitrini</h2>
+      <div class="product-grid">
+        <% products.forEach(product => { %>
+          <a href="/detail/<%= product.id %>" class="product-card">
+            <img src="<%= product.image %>" alt="Ürün Görseli">
+            <h3><%= product.description %></h3>
+            <p><%= product.price.toLocaleString('tr-TR') %> TL</p>
+          </a>
+        <% }); %>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 sahibindenclone.com - Tüm Hakları Saklıdır.</p>
+  </footer>
+</body>
+</html>
