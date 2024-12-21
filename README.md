@@ -88,13 +88,13 @@ The project uses a SQLite3 database with a single `products` table structured as
    npm start
    ```
 
-5. Access the application at [http://localhost:3000](http://localhost:3000).
+5. Access the application at [http://localhost:3000](http://localhost:4000).
 
 ---
 
 ## Deployment
 
-The application is deployed on **Render** and accessible via [Buy-Sell Website](#).
+The application is deployed on **Render** and accessible via [[Buy-Sell Website](#).](https://buy-sell-website.onrender.com/)
 
 ### Deployment Notes
 
