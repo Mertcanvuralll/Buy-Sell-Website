@@ -4,7 +4,7 @@
 The **Buy-Sell Website** is a full-stack web application designed to simulate an online marketplace. It enables users to view listings, filter by categories or subcategories, and search for products based on various parameters. The project employs **Node.js** for the backend, **EJS** for templating, **SQLite3** for the database, and is deployed on **Render** for cloud hosting.
 
 ## Deployment
-This project is live and accessible at [Buy-Sell Website](#).
+This project is live and accessible at https://buy-sell-website.onrender.com/
 
 ---
 
